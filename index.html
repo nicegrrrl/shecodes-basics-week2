@@ -75,14 +75,18 @@
       </button>
     </section>
     <script>
-      let hour = prompt("What is the current hour?");
+      let country = prompt("What country are you from?");
 
-      if (hour < 12) {
-        alert("Good morning!");
-      } else if (hour < 18) {
-        alert("Good afternoon!");
-      } else if (hour <= 24) {
-        alert("Good evening!");
+      // country = country.toLowerCase().trim();
+      // country = country.replace("brasil", "brazil");
+
+      if ((country.toLowerCase().trim() === "brazil") ||
+          (country.toLowerCase().trim() === "brasil") ||
+          (country.toLowerCase().trim() === "portugal")
+      ) {
+        alert("You speak Portuguese!");
+      } else {
+        alert("You don't speak Portuguese.")
       }
     </script>
   </body>
