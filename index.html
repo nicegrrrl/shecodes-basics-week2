@@ -75,12 +75,14 @@
       </button>
     </section>
     <script>
-      let age = prompt("How old are you?");
+      let hour = prompt("What is the current hour?");
 
-      if (age >= 18) {
-        alert("You can apply to SheCodes!");
-      } else {
-        alert("You cannot apply to SheCodes...");
+      if (hour < 12) {
+        alert("Good morning!");
+      } else if (hour < 18) {
+        alert("Good afternoon!");
+      } else if (hour <= 24) {
+        alert("Good evening!");
       }
     </script>
   </body>
