@@ -76,20 +76,32 @@
     </section>
     <script>
 
-      function helloSorry() {
-        let firstName = prompt("What is your first name?");
+      // refactoring the previous code
+      // by Matt Delac
+
+      function updateHeading(newHeading) {
+        let heading = document.querySelector("h1");
+        heading.innerHTML = newHeading;
+      }
+
+      function canApply() {
         let age = prompt("How old are you?");
-        let h1 = document.querySelector("h1");
-        
-        if (age >= 18) {
-          h1.innerHTML = `Hi, ${firstName}! Welcome to SheCodes.`;
+        return age>= 18;
+      }
+
+      function apply() {
+        let firstName = prompt("What is your first name?");
+
+        if (canApply()) {
+          updateHeading(`Hi ${firstName}! Welcome to SheCodes 👩‍💻`);
         } else {
-          h1.innerHTML = `Sorry, ${firstName}! You cannot join SheCodes.`;
+          updateHeading(`Sorry ${firstName}, you can't apply to SheCodes.`);
         }
       }
 
-      let button = document.querySelector("button");
-      button.addEventListener("click", helloSorry);
+      let applyButton = document.querySelector("button");
+      applyButton.addEventListener("click", apply);
+
     </script>
   </body>
 </html>
