@@ -76,20 +76,20 @@
     </section>
     <script>
 
-      function canSpeakPortuguese() {
-        let country = prompt("What country are you from?");
-        if ((country.toLowerCase().trim() === "brazil") ||
-            (country.toLowerCase().trim() === "brasil") ||
-            (country.toLowerCase().trim() === "portugal")
-        ) {
-          alert("You speak Portuguese");
+      function helloSorry() {
+        let firstName = prompt("What is your first name?");
+        let age = prompt("How old are you?");
+        let h1 = document.querySelector("h1");
+        
+        if (age >= 18) {
+          h1.innerHTML = `Hi, ${firstName}! Welcome to SheCodes.`;
         } else {
-          alert("You don't speak Portuguese!")
+          h1.innerHTML = `Sorry, ${firstName}! You cannot join SheCodes.`;
         }
       }
 
-      canSpeakPortuguese();
-      
+      let button = document.querySelector("button");
+      button.addEventListener("click", helloSorry);
     </script>
   </body>
 </html>
